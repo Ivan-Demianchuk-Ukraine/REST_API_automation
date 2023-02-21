@@ -1,0 +1,14 @@
+{
+  "user_1": {"name": "Mister Baiden",
+             "gender": "male",
+             "email": "robo.kops@3000.com",
+             "status": "active"},
+  "user_2": {"name": "Ms Pellosy",
+             "gender": "women",
+             "email": "pep.los@gmail.com",
+             "status": "active"},
+  "user_3": {"name": "Mister Erdogan",
+             "gender": "male",
+             "email": "turkey.kops@gmail.com",
+             "status": "active"}
+}

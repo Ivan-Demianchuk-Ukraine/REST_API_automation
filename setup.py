@@ -7,7 +7,7 @@ setup(name='REST_API_automation',
       url='https://gorest.co.in/',
       packages=['pytest'],
       install_requires=['pytest',
-                        'selenium',
+                        'requests',
                         ])
 
 
