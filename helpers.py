@@ -1,5 +1,6 @@
 import requests
 import json
+from random import randint
 
 
 with open(r'config.json') as f:
@@ -15,9 +16,16 @@ headers_with_auth = {"Accept": "application/json",
                      "Authorization": "Bearer 9cc3165b8312515b95359fb3795ed73debd79bd2553fe8280f368272b4d62722"}
 
 
+random_name = None
+
+
+def generate_random():
+    global random_name
+    random_value = str(randint(1, 999999999))
+    return random_value
+
 
 class HttpRequests:
-    counter_of_updates = 1
 
     @staticmethod
     def post_user():
@@ -66,8 +74,8 @@ class HttpRequests:
                                 headers=headers_with_auth)
 
     @staticmethod
-    def patch_name():
-        return requests.patch(base_url + f'/{http_methods.get_user_id()}', json={'name': 'NewName'},
+    def patch_name(value: str):
+        return requests.patch(base_url + f'/{http_methods.get_user_id()}', json={'name': value},
                               headers=headers_with_auth)
 
     @staticmethod
@@ -76,10 +84,3 @@ class HttpRequests:
 
 
 http_methods = HttpRequests()
-
-#
-#
-# response = requests.get(base_url + '?' + user['email'], headers=headers_with_auth)
-# print(response.json())
-# user_id = response.json()[0]['id']
-
