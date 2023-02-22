@@ -14,14 +14,14 @@ def test_get_user():
 
 
 def test_put_user():
-    assert http_methods.put_name().status_code == 200
-    assert http_methods.get_user_name() != user['name']
+    assert http_methods.put_name('new_name1').status_code == 200
+    assert http_methods.get_user_name() == 'new_name1'
 
 
 def test_patch_user():
-    assert http_methods.patch_email().status_code == 200
+    assert http_methods.patch_name().status_code == 200
 
 
 def test_delete_user():
     assert http_methods.delete().status_code == 204
-
+    assert http_methods.patch_name().status_code == 404

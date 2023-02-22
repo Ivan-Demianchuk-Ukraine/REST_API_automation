@@ -16,8 +16,8 @@ headers_with_auth = {"Accept": "application/json",
 
 
 
-
 class HttpRequests:
+    counter_of_updates = 1
 
     @staticmethod
     def post_user():
@@ -26,8 +26,11 @@ class HttpRequests:
     @staticmethod
     def get_user_id():
         response = requests.get(base_url+'?'+user['email'], headers=headers_with_auth)
-        user_id = response.json()[0]['id']
-        return user_id
+        if user['email'] == response.json()[0]['email']:
+            user_id = response.json()[0]['id']
+            return user_id
+        else:
+            pass
 
     @staticmethod
     def get_user_name():
@@ -55,16 +58,16 @@ class HttpRequests:
 
     @staticmethod
     def get_user_data():
-        return requests.get(base_url + '?' + user['email'], headers=headers_with_auth)
+        return requests.get(base_url + f'/{http_methods.get_user_id()}', headers=headers_with_auth)
 
     @staticmethod
-    def put_name():
-        return requests.put(base_url + f'/{http_methods.get_user_id()}', json={'name': 'MisterZelensky'},
-                            headers=headers_with_auth)
+    def put_name(value: str):
+            return requests.put(base_url + f'/{http_methods.get_user_id()}', json={'name': value},
+                                headers=headers_with_auth)
 
     @staticmethod
-    def patch_email():
-        return requests.patch(base_url + f'/{http_methods.get_user_id()}', json={'email': 'newmail@gmail.com'},
+    def patch_name():
+        return requests.patch(base_url + f'/{http_methods.get_user_id()}', json={'name': 'NewName'},
                               headers=headers_with_auth)
 
     @staticmethod
@@ -73,3 +76,10 @@ class HttpRequests:
 
 
 http_methods = HttpRequests()
+
+#
+#
+# response = requests.get(base_url + '?' + user['email'], headers=headers_with_auth)
+# print(response.json())
+# user_id = response.json()[0]['id']
+
