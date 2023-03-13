@@ -1,4 +1,4 @@
-# Hi there!
+# Hi!
 
 This repository consists REST API testing framework that I made via 'PyTest' & 'Requests' libraries. Here you can find a instruction how to execute my code:
 
