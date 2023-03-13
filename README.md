@@ -1,6 +1,6 @@
 # Hello!
 
-This repository consists REST API testing framework that I made via 'PyTest' & 'Requests' libraries. Here you can find a instruction how to use my code:
+This repository consists REST API testing framework that I made via 'PyTest' & 'Requests' libraries. Here you can find a instruction how to execute my code:
 
 1. Download repository.
 2. Download all required packages (from the setup.py file)
