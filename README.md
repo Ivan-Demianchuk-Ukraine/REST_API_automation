@@ -4,7 +4,7 @@ This repository consists REST API testing framework that I made via 'PyTest' & '
 
 1. Download repository.
 2. Download all required packages (from the setup.py file)
-3. To run tests you need to use console command: pytest tests/test_option.py (make sure you are in the repository REST_API_automation )
+3. To run tests you need to use console command: pytest tests/test_options.py (make sure you are in the repository REST_API_automation )
 
 Note:
 - in the config file you can change the base you test
